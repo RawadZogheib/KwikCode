@@ -18,13 +18,24 @@ class _TestState extends State<Test> {
   }
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Image(
-        image: AssetImage('Assets/3Dobjects/Comet.gif'),
-        fit: BoxFit.cover,
-        height: double.infinity,
-        width: double.infinity,
-        alignment: Alignment.center,
+    return Scaffold(
+      backgroundColor: Colors.blue,
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Image.asset('Assets/3Dobjects/Comet.gif',
+            fit: BoxFit.cover,
+            height: 500,
+            width: 500,
+            alignment: Alignment.center,
+          ),
+          Image.asset('Assets/3Dobjects/kwikCode.gif',
+            fit: BoxFit.cover,
+            height: 500,
+            width: 500,
+            alignment: Alignment.center,
+          ),
+        ],
       ),
     );
   }
