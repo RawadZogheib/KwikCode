@@ -14,13 +14,13 @@ class MyApp extends StatelessWidget {
     //return Sizer(
     //builder: (context, orientation, deviceType) {
     return MaterialApp(
-        title: 'Flutter Demo',
+        title: 'KwikCode',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
         //home: FirstPage(),
-        initialRoute: '/HomePage',
+        initialRoute: '/test',
         routes: {
           '/HomePage': (context) => HomePage(),
           '/test': (context) => Test(),
