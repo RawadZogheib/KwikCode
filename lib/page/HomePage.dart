@@ -15,8 +15,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   double _dist = 0;
   int k = 0;
-  int min = Random().nextInt(3) + 2;
-  int max = Random().nextInt(7) + 18;
+  int min = Random().nextInt(3) + 4;
+  int max = Random().nextInt(5) + 15;
   bool play = true;
 
   @override
@@ -46,11 +46,12 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Row(
                   children: [
+                    SizedBox(width: 20,),
                     Image.asset(
                       'Assets/3Dobjects/KwikCodeLogo.png',
                       fit: BoxFit.contain,
                       height: MediaQuery.of(context).size.height * 0.12,
-                      width: MediaQuery.of(context).size.width * 0.12,
+                      width: MediaQuery.of(context).size.width * 0.06,
                     ),
                     Text(
                       'KwikCode',
@@ -64,96 +65,111 @@ class _HomePageState extends State<HomePage> {
                 // Buttons
                 Expanded(
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       SizedBox(
-                        width: 420,
+                        width: 450,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Container(
-                              height: 45,
-                              width: 95,
-                              alignment: Alignment.center,
-                              padding: const EdgeInsets.all(9.0),
-                              decoration: BoxDecoration(
-                                color: HexColor('#cb156f'),
-                                borderRadius: const BorderRadius.only(
-                                    bottomRight: Radius.circular(22.0),
-                                    topLeft: Radius.circular(22.0)),
+                            InkWell(
+                              onTap: (){},
+                              child: Container(
+                                height: 48,
+                                width: 95,
+                                alignment: Alignment.center,
+                                padding: const EdgeInsets.all(9.0),
+                                decoration: BoxDecoration(
+                                  color: HexColor('#cb156f'),
+                                  borderRadius: const BorderRadius.only(
+                                      bottomRight: Radius.circular(28.0),
+                                      topLeft: Radius.circular(28.0)),
+                                ),
+                                child: const Text(
+                                  'Home',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                  ),
+                                ),
                               ),
-                              child: const Text(
-                                'Home',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
+                            ),
+                            InkWell(
+                              onTap: (){},
+                              child: Container(
+                                height: 40,
+                                width: 90,
+                                alignment: Alignment.center,
+                                padding: const EdgeInsets.all(9.0),
+                                decoration: const BoxDecoration(
                                   color: Colors.white,
-                                  fontSize: 20,
+                                  borderRadius: BorderRadius.only(
+                                      bottomRight: Radius.circular(28.0),
+                                      topLeft: Radius.circular(28.0)),
+                                ),
+                                child: Text(
+                                  'Services',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: HexColor('#222222'),
+                                    fontSize: 17,
+                                  ),
                                 ),
                               ),
                             ),
-                            Container(
-                              height: 40,
-                              width: 85,
-                              alignment: Alignment.center,
-                              padding: const EdgeInsets.all(9.0),
-                              decoration: const BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.only(
-                                    bottomRight: Radius.circular(22.0),
-                                    topLeft: Radius.circular(22.0)),
-                              ),
-                              child: Text(
-                                'Services',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: HexColor('#222222'),
-                                  fontSize: 17,
+                            InkWell(
+                              onTap: (){},
+                              child: Container(
+                                height: 40,
+                                width: 85,
+                                alignment: Alignment.center,
+                                padding: const EdgeInsets.all(9.0),
+                                decoration: const BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.only(
+                                    bottomRight: Radius.circular(28.0),
+                                    topLeft: Radius.circular(28.0),
+                                  ),
+                                ),
+                                child: Text(
+                                  'Prices',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: HexColor('#222222'),
+                                    fontSize: 17,
+                                  ),
                                 ),
                               ),
                             ),
-                            Container(
-                              height: 40,
-                              width: 85,
-                              alignment: Alignment.center,
-                              padding: const EdgeInsets.all(9.0),
-                              decoration: const BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.only(
-                                  bottomRight: Radius.circular(22.0),
-                                  topLeft: Radius.circular(22.0),
+                            InkWell(
+                              onTap: (){},
+                              child: Container(
+                                height: 40,
+                                width: 85,
+                                alignment: Alignment.center,
+                                padding: const EdgeInsets.all(9.0),
+                                decoration: const BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.only(
+                                      bottomRight: Radius.circular(28.0),
+                                      topLeft: Radius.circular(28.0)),
                                 ),
-                              ),
-                              child: Text(
-                                'Prices',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: HexColor('#222222'),
-                                  fontSize: 17,
-                                ),
-                              ),
-                            ),
-                            Container(
-                              height: 40,
-                              width: 85,
-                              alignment: Alignment.center,
-                              padding: const EdgeInsets.all(9.0),
-                              decoration: const BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.only(
-                                    bottomRight: Radius.circular(22.0),
-                                    topLeft: Radius.circular(22.0)),
-                              ),
-                              child: Text(
-                                'About',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: HexColor('#222222'),
-                                  fontSize: 17,
+                                child: Text(
+                                  'About',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: HexColor('#222222'),
+                                    fontSize: 17,
+                                  ),
                                 ),
                               ),
                             ),
                           ],
                         ),
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.03,
                       ),
                     ],
                   ),
@@ -327,19 +343,19 @@ class _HomePageState extends State<HomePage> {
 
   Future<void> distAnimation() async {
     Timer timer =
-        Timer.periodic(const Duration(milliseconds: 110), (Timer t) async {
+        Timer.periodic(const Duration(milliseconds: 60), (Timer t) async {
       // while (play != false) {
       //   await Future.delayed(const Duration(milliseconds: 100));
-      print("110msec gone!!");
+      print("60msec gone!!");
       if (k % 2 == 0) {
         if (mounted) {
           setState(() {
-            _dist++;
+              _dist+=0.25;
           });
         }
         if (_dist == max) {
           k++;
-          min = Random().nextInt(3) + 2;
+          min = Random().nextInt(3) + 4;
           //
           print(min);
           //
@@ -350,12 +366,12 @@ class _HomePageState extends State<HomePage> {
       } else {
         if (mounted) {
           setState(() {
-            _dist--;
+            _dist-=0.25;
           });
         }
         if (_dist == min) {
           k++;
-          max = Random().nextInt(7) + 18;
+          max = Random().nextInt(5) + 15;
           //
           print(max);
           //
