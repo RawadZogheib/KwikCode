@@ -102,9 +102,9 @@ class _HomePageState extends State<HomePage> {
                                 width: 90,
                                 alignment: Alignment.center,
                                 padding: const EdgeInsets.all(9.0),
-                                decoration: const BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.only(
+                                decoration: BoxDecoration(
+                                  color: HexColor('#ffffff'),
+                                  borderRadius: const BorderRadius.only(
                                       bottomRight: Radius.circular(28.0),
                                       topLeft: Radius.circular(28.0)),
                                 ),
@@ -125,9 +125,9 @@ class _HomePageState extends State<HomePage> {
                                 width: 85,
                                 alignment: Alignment.center,
                                 padding: const EdgeInsets.all(9.0),
-                                decoration: const BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.only(
+                                decoration: BoxDecoration(
+                                  color: HexColor('#ffffff'),
+                                  borderRadius: const BorderRadius.only(
                                     bottomRight: Radius.circular(28.0),
                                     topLeft: Radius.circular(28.0),
                                   ),
@@ -149,9 +149,9 @@ class _HomePageState extends State<HomePage> {
                                 width: 85,
                                 alignment: Alignment.center,
                                 padding: const EdgeInsets.all(9.0),
-                                decoration: const BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.only(
+                                decoration: BoxDecoration(
+                                  color: HexColor('#ffffff'),
+                                  borderRadius: const BorderRadius.only(
                                       bottomRight: Radius.circular(28.0),
                                       topLeft: Radius.circular(28.0)),
                                 ),
@@ -294,7 +294,7 @@ class _HomePageState extends State<HomePage> {
                     child: Container(
                       height: MediaQuery.of(context).size.height * 0.82,
                       width: MediaQuery.of(context).size.width * 1,
-                      color: HexColor('#ffffff'),
+                      color: HexColor('#cccccc'),
                     ),
                   ),
                   SizedBox(
