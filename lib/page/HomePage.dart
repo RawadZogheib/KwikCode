@@ -172,54 +172,56 @@ class _HomePageState extends State<HomePage> {
               ),
               child: ListView(
                 children: [
-                  ClipRRect(
-                    borderRadius: const BorderRadius.only(
-                      topRight: Radius.circular(32.0),
-                      topLeft: Radius.circular(32.0),
-                      bottomRight: Radius.circular(32.0),
-                      bottomLeft: Radius.circular(32.0),
-                    ),
-                    child: Stack(
-                      children: [
-                        Image.asset(
-                          'Assets/HomePage/background.jpg',
-                          fit: BoxFit.cover,
-                          height: MediaQuery.of(context).size.height * 0.83,
-                          width: MediaQuery.of(context).size.width * 1,
-                        ),
-                        Container(
-                          color: Colors.transparent,
-                          height: MediaQuery.of(context).size.height * 0.83,
-                          width: MediaQuery.of(context).size.width * 1,
-                          padding: EdgeInsets.only(
-                            left: MediaQuery.of(context).size.width * 0.05,
+                  Center(
+                    child: ClipRRect(
+                      borderRadius: const BorderRadius.only(
+                        topRight: Radius.circular(32.0),
+                        topLeft: Radius.circular(32.0),
+                        bottomRight: Radius.circular(32.0),
+                        bottomLeft: Radius.circular(32.0),
+                      ),
+                      child: Stack(
+                        children: [
+                          Image.asset(
+                            'Assets/HomePage/background.jpg',
+                            fit: BoxFit.cover,
+                            height: MediaQuery.of(context).size.height * 0.8 + _dist,
+                            width: MediaQuery.of(context).size.width * 1 - _dist,
                           ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                '  Build a \n     Kwik Code',
-                                style: TextStyle(
-                                    color: globals.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 90),
-                              ),
-                              const Text(
-                                ' Computer science involves the study of computation, automation,\n'
-                                ' and information. Computer science spanstheoretical disciplines\n '
-                                '(such as algorithms, theory of computation, and information theory) \n'
-                                ' to practical disciplines (including the design and implementation of\n '
-                                'hardware and software). Computer science is generally considered\n'
-                                ' [by whom?] an area of academic researchs and distinct from computer \n'
-                                ' programming.\n',
-                                style:
-                                    TextStyle(color: Colors.grey, fontSize: 20),
-                              ),
-                            ],
+                          Container(
+                            color: Colors.transparent,
+                            height: MediaQuery.of(context).size.height * 0.8 + _dist,
+                            width: MediaQuery.of(context).size.width * 1 - _dist,
+                            padding: EdgeInsets.only(
+                              left: MediaQuery.of(context).size.width * 0.05,
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  '  Build a \n     Kwik Code',
+                                  style: TextStyle(
+                                      color: globals.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 90),
+                                ),
+                                const Text(
+                                  ' Computer science involves the study of computation, automation,\n'
+                                  ' and information. Computer science spanstheoretical disciplines\n '
+                                  '(such as algorithms, theory of computation, and information theory) \n'
+                                  ' to practical disciplines (including the design and implementation of\n '
+                                  'hardware and software). Computer science is generally considered\n'
+                                  ' [by whom?] an area of academic researchs and distinct from computer \n'
+                                  ' programming.\n',
+                                  style:
+                                      TextStyle(color: Colors.grey, fontSize: 20),
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                   SizedBox(
