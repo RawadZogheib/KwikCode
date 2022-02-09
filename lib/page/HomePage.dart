@@ -33,7 +33,10 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         children: [
           Container(
-            height: MediaQuery.of(context).size.height * 0.15,
+            height: MediaQuery
+                .of(context)
+                .size
+                .height * 0.15,
             decoration: BoxDecoration(
               color: HexColor('#222222'),
               borderRadius: const BorderRadius.only(
@@ -50,8 +53,14 @@ class _HomePageState extends State<HomePage> {
                     Image.asset(
                       'Assets/3Dobjects/KwikCodeLogo.png',
                       fit: BoxFit.contain,
-                      height: MediaQuery.of(context).size.height * 0.12,
-                      width: MediaQuery.of(context).size.width * 0.06,
+                      height: MediaQuery
+                          .of(context)
+                          .size
+                          .height * 0.12,
+                      width: MediaQuery
+                          .of(context)
+                          .size
+                          .width * 0.06,
                     ),
                     Text(
                       'KwikCode',
@@ -73,7 +82,7 @@ class _HomePageState extends State<HomePage> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             InkWell(
-                              onTap: (){},
+                              onTap: () {},
                               child: Container(
                                 height: 48,
                                 width: 95,
@@ -96,7 +105,7 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                             InkWell(
-                              onTap: (){},
+                              onTap: () {},
                               child: Container(
                                 height: 40,
                                 width: 90,
@@ -119,7 +128,7 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                             InkWell(
-                              onTap: (){},
+                              onTap: () {},
                               child: Container(
                                 height: 40,
                                 width: 85,
@@ -143,7 +152,7 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                             InkWell(
-                              onTap: (){},
+                              onTap: () {},
                               child: Container(
                                 height: 40,
                                 width: 85,
@@ -169,7 +178,10 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                       SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.03,
+                        width: MediaQuery
+                            .of(context)
+                            .size
+                            .width * 0.03,
                       ),
                     ],
                   ),
@@ -187,8 +199,14 @@ class _HomePageState extends State<HomePage> {
                 topLeft: Radius.circular(32.0),
               ),
               child: SizedBox(
-                height: MediaQuery.of(context).size.height * 0.8 + _dist,
-                width: MediaQuery.of(context).size.width * 1 - _dist,
+                height: MediaQuery
+                    .of(context)
+                    .size
+                    .height * 0.8 + _dist,
+                width: MediaQuery
+                    .of(context)
+                    .size
+                    .width * 1 - _dist,
                 child: ListView(
                   children: [
                     Center(
@@ -202,17 +220,32 @@ class _HomePageState extends State<HomePage> {
                         child: Stack(
                           children: [
                             Image.asset(
-                              'Assets/HomePage/background.jpg',
+                              'Assets/HomePage/background.gif',
                               fit: BoxFit.cover,
-                              height: MediaQuery.of(context).size.height * 0.8 + _dist,
-                              width: MediaQuery.of(context).size.width * 1 - _dist,
+                              height: MediaQuery
+                                  .of(context)
+                                  .size
+                                  .height * 0.8 + _dist,
+                              width: MediaQuery
+                                  .of(context)
+                                  .size
+                                  .width * 1 - _dist,
                             ),
                             Container(
                               color: Colors.transparent,
-                              height: MediaQuery.of(context).size.height * 0.8 + _dist,
-                              width: MediaQuery.of(context).size.width * 1 - _dist,
+                              height: MediaQuery
+                                  .of(context)
+                                  .size
+                                  .height * 0.8 + _dist,
+                              width: MediaQuery
+                                  .of(context)
+                                  .size
+                                  .width * 1 - _dist,
                               padding: EdgeInsets.only(
-                                left: MediaQuery.of(context).size.width * 0.05,
+                                left: MediaQuery
+                                    .of(context)
+                                    .size
+                                    .width * 0.05,
                               ),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -227,14 +260,14 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   const Text(
                                     ' Computer science involves the study of computation, automation,\n'
-                                    ' and information. Computer science spanstheoretical disciplines\n '
-                                    '(such as algorithms, theory of computation, and information theory) \n'
-                                    ' to practical disciplines (including the design and implementation of\n '
-                                    'hardware and software). Computer science is generally considered\n'
-                                    ' [by whom?] an area of academic researchs and distinct from computer \n'
-                                    ' programming.\n',
+                                        ' and information. Computer science spanstheoretical disciplines\n '
+                                        '(such as algorithms, theory of computation, and information theory) \n'
+                                        ' to practical disciplines (including the design and implementation of\n '
+                                        'hardware and software). Computer science is generally considered\n'
+                                        ' [by whom?] an area of academic researchs and distinct from computer \n'
+                                        ' programming.\n',
                                     style:
-                                        TextStyle(color: Colors.grey, fontSize: 20),
+                                    TextStyle(color: Colors.grey, fontSize: 20),
                                   ),
                                 ],
                               ),
@@ -247,8 +280,14 @@ class _HomePageState extends State<HomePage> {
                       height: _dist,
                     ),
                     Container(
-                      height: MediaQuery.of(context).size.height * 0.82,
-                      width: MediaQuery.of(context).size.width * 1,
+                      height: MediaQuery
+                          .of(context)
+                          .size
+                          .height * 0.82,
+                      width: MediaQuery
+                          .of(context)
+                          .size
+                          .width * 1,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -260,9 +299,27 @@ class _HomePageState extends State<HomePage> {
                               bottomLeft: Radius.circular(32.0),
                             ),
                             child: Container(
-                              height: MediaQuery.of(context).size.height * 0.82,
-                              width: MediaQuery.of(context).size.width * 0.485,
+                              height: MediaQuery
+                                  .of(context)
+                                  .size
+                                  .height * 0.82,
+                              width: MediaQuery
+                                  .of(context)
+                                  .size
+                                  .width * 0.485,
                               color: HexColor('#333333'),
+                              child: Image.asset(
+                                'Assets/3Dobjects/Comet3.gif',
+                                fit: BoxFit.contain,
+                                height: MediaQuery
+                                    .of(context)
+                                    .size
+                                    .height * 0.12,
+                                width: MediaQuery
+                                    .of(context)
+                                    .size
+                                    .width * 0.06,
+                              ),
                             ),
                           ),
                           SizedBox(
@@ -276,9 +333,29 @@ class _HomePageState extends State<HomePage> {
                               bottomLeft: Radius.circular(32.0),
                             ),
                             child: Container(
-                              height: MediaQuery.of(context).size.height * 0.82,
-                              width: MediaQuery.of(context).size.width * 0.485,
-                              color: HexColor('#333333'),
+                                height: MediaQuery
+                                    .of(context)
+                                    .size
+                                    .height * 0.82,
+                                width: MediaQuery
+                                    .of(context)
+                                    .size
+                                    .width * 0.485,
+                                color: HexColor('#333333'),
+                              child: const Center(
+                                child: Text(
+                                  ' Computer science involves the study of computation, automation,\n'
+                                      ' and information. Computer science spanstheoretical disciplines\n '
+                                      '(such as algorithms, theory of computation, and information theory) \n'
+                                      ' to practical disciplines (including the design and implementation of\n '
+                                      'hardware and software). Computer science is generally considered\n'
+                                      ' [by whom?] an area of academic researchs and distinct from computer \n'
+                                      ' programming.\n',
+                                  style:
+                                  TextStyle(color: Colors.grey, fontSize: 20),
+                                ),
+                              ),
+
                             ),
                           ),
                         ],
@@ -295,8 +372,14 @@ class _HomePageState extends State<HomePage> {
                         bottomLeft: Radius.circular(32.0),
                       ),
                       child: Container(
-                        height: MediaQuery.of(context).size.height * 0.82,
-                        width: MediaQuery.of(context).size.width * 1,
+                        height: MediaQuery
+                            .of(context)
+                            .size
+                            .height * 0.82,
+                        width: MediaQuery
+                            .of(context)
+                            .size
+                            .width * 1,
                         color: HexColor('#cccccc'),
                       ),
                     ),
@@ -311,8 +394,14 @@ class _HomePageState extends State<HomePage> {
                         bottomLeft: Radius.circular(32.0),
                       ),
                       child: Container(
-                        height: MediaQuery.of(context).size.height * 0.82,
-                        width: MediaQuery.of(context).size.width * 1,
+                        height: MediaQuery
+                            .of(context)
+                            .size
+                            .height * 0.82,
+                        width: MediaQuery
+                            .of(context)
+                            .size
+                            .width * 1,
                         color: HexColor('#cb156f'),
                       ),
                     ),
@@ -327,8 +416,14 @@ class _HomePageState extends State<HomePage> {
                         bottomLeft: Radius.circular(32.0),
                       ),
                       child: Container(
-                        height: MediaQuery.of(context).size.height * 0.82,
-                        width: MediaQuery.of(context).size.width * 1,
+                        height: MediaQuery
+                            .of(context)
+                            .size
+                            .height * 0.82,
+                        width: MediaQuery
+                            .of(context)
+                            .size
+                            .width * 1,
                         color: HexColor('#222222'),
                       ),
                     ),
@@ -347,14 +442,14 @@ class _HomePageState extends State<HomePage> {
 
   Future<void> distAnimation() async {
     Timer timer =
-        Timer.periodic(const Duration(milliseconds: 60), (Timer t) async {
+    Timer.periodic(const Duration(milliseconds: 60), (Timer t) async {
       // while (play != false) {
       //   await Future.delayed(const Duration(milliseconds: 100));
       print("60msec gone!!");
       if (k % 2 == 0) {
         if (mounted) {
           setState(() {
-              _dist+=0.25;
+            _dist += 0.25;
           });
         }
         if (_dist == max) {
@@ -370,7 +465,7 @@ class _HomePageState extends State<HomePage> {
       } else {
         if (mounted) {
           setState(() {
-            _dist-=0.25;
+            _dist -= 0.25;
           });
         }
         if (_dist == min) {
