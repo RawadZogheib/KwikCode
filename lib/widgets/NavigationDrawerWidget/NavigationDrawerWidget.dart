@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:kwikcode/hexColor/hexColor.dart';
-import 'package:sizer/sizer.dart';
 
 class NavigationDrawerWidget extends StatefulWidget {
   Animation distAnimation;
@@ -28,12 +27,13 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
     double width5 = MediaQuery.of(context).size.width * 0.05;
     double width6 = MediaQuery.of(context).size.width * 0.06;
     double width485 = MediaQuery.of(context).size.width * 0.485;
-    double width55 = MediaQuery.of(context).size.width * 0.5;
+    double width50 = MediaQuery.of(context).size.width * 0.5;
+    double width52 = MediaQuery.of(context).size.width * 0.52;
     double width60 = MediaQuery.of(context).size.width * 0.6;
     double width100 = MediaQuery.of(context).size.width * 1;
 
     return SizedBox(
-      width: width60,
+      width: width52,
       child: Drawer(
         backgroundColor: Colors.transparent,
         child: Column(
@@ -51,7 +51,7 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                 child: Container(
                   height: height10,
                   width: width60,
-                  padding: const EdgeInsets.only(left: 20.0),
+                  padding: const EdgeInsets.only(left: 10.0),
                   alignment: Alignment.centerLeft,
                   child: Wrap(
                     direction: Axis.horizontal,
@@ -70,7 +70,7 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                               color: HexColor('#333333'),
                               height: height60 +
                                       widget.distAnimation.value,
-                              width: width55 -
+                              width: width50 -
                                   widget.distAnimation.value,
                               padding: EdgeInsets.only(
                                 left: width5,
@@ -101,7 +101,7 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                             child: Container(
                               height: height30 +
                                   widget.distAnimation.value,
-                              width: width55 -
+                              width: width50 -
                                   widget.distAnimation.value,
                               color: HexColor('#f3f3f3'),
                             ),

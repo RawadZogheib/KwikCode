@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:kwikcode/globals/globals.dart' as globals;
 import 'package:kwikcode/hexColor/hexColor.dart';
 import 'package:kwikcode/widgets/NavigationDrawerWidget/NavigationDrawerWidget.dart';
-import 'package:sizer/sizer.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
