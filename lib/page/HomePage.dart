@@ -37,8 +37,11 @@ class _HomePageState extends State<HomePage>
   @override
   Widget build(BuildContext context) {
 
+    double height10 = MediaQuery.of(context).size.height * 0.1;
     double height12 = MediaQuery.of(context).size.height * 0.12;
     double height15 = MediaQuery.of(context).size.height * 0.15;
+    double height30 = MediaQuery.of(context).size.height * 0.3;
+    double height60 = MediaQuery.of(context).size.height * 0.6;
     double height80 = MediaQuery.of(context).size.height * 0.80;
     double height82 = MediaQuery.of(context).size.height * 0.82;
     double width1 = MediaQuery.of(context).size.width * 0.01;
@@ -46,6 +49,9 @@ class _HomePageState extends State<HomePage>
     double width5 = MediaQuery.of(context).size.width * 0.05;
     double width6 = MediaQuery.of(context).size.width * 0.06;
     double width485 = MediaQuery.of(context).size.width * 0.485;
+    double width50 = MediaQuery.of(context).size.width * 0.5;
+    double width52 = MediaQuery.of(context).size.width * 0.52;
+    double width60 = MediaQuery.of(context).size.width * 0.6;
     double width100 = MediaQuery.of(context).size.width * 1;
 
     Animation distAnimation = Tween(begin: 4.0, end: 20.0).animate(
