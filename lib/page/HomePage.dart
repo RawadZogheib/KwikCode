@@ -350,7 +350,6 @@ class _HomePageState extends State<HomePage>
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      
                                       ClipRRect(
                                         borderRadius: const BorderRadius.only(
                                           topRight: Radius.circular(32.0),
@@ -365,8 +364,8 @@ class _HomePageState extends State<HomePage>
                                           child: Image.asset(
                                             'Assets/3Dobjects/Comet3.gif',
                                             fit: BoxFit.contain,
-                                            height: height12,
-                                            width: width6,
+                                            height: height82,
+                                            width: width485,
                                           ),
                                         ),
                                       ),
