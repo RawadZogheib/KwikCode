@@ -383,6 +383,7 @@ class _HomePageState extends State<HomePage>
                                           child: Container(
                                             height: height82,
                                             color: HexColor('#333333'),
+                                            padding: const EdgeInsets.all(8.0),
                                             child: const Center(
                                               child: Text(
                                                 ' Computer science involves the study of computation, automation,\n'
