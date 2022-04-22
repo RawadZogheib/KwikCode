@@ -350,9 +350,7 @@ class _HomePageState extends State<HomePage>
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      SizedBox(
-                                        width: distAnimation.value,
-                                      ),
+                                      
                                       ClipRRect(
                                         borderRadius: const BorderRadius.only(
                                           topRight: Radius.circular(32.0),
@@ -402,9 +400,6 @@ class _HomePageState extends State<HomePage>
                                             ),
                                           ),
                                         ),
-                                      ),
-                                      SizedBox(
-                                        width: distAnimation.value,
                                       ),
                                     ],
                                   ),
