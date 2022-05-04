@@ -38,6 +38,9 @@ dependencies:
   http: ^0.13.4
   fluttertoast: ^8.0.8
   sizer: ^2.0.15
+  imageview360: ^1.3.0
+  flutter_svg: ^1.0.3
+  infinite_listview: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -74,6 +77,48 @@ flutter:
     - Assets/3Dobjects/KwikCodeLogo.png
     - Assets/HomePage/background.gif
     - Assets/HomePage/background.jpg
+    - Assets/Projects52/testProject/img (1).png
+    - Assets/Projects52/testProject/img (2).png
+    - Assets/Projects52/testProject/img (3).png
+    - Assets/Projects52/testProject/img (4).png
+    - Assets/Projects52/testProject/img (5).png
+    - Assets/Projects52/testProject/img (6).png
+    - Assets/Projects52/testProject/img (7).png
+    - Assets/Projects52/testProject/img (8).png
+    - Assets/Projects52/testProject/img (9).png
+    - Assets/Projects52/testProject/img (10).png
+    - Assets/Projects52/testProject/img (11).png
+    - Assets/Projects52/testProject/img (12).png
+    - Assets/Projects52/testProject/img (13).png
+    - Assets/Projects52/testProject/img (14).png
+    - Assets/Projects52/testProject/img (15).png
+    - Assets/Projects52/testProject/img (16).png
+    - Assets/Projects52/testProject/img (17).png
+    - Assets/Projects52/testProject/img (18).png
+    - Assets/Projects52/testProject/img (19).png
+    - Assets/Projects52/testProject/img (20).png
+    - Assets/Projects52/testProject/img (21).png
+    - Assets/Projects52/testProject/img (22).png
+    - Assets/Projects52/testProject/img (23).png
+    - Assets/Projects52/testProject/img (24).png
+    - Assets/Projects52/testProject/img (25).png
+    - Assets/Projects52/testProject/img (26).png
+    - Assets/Projects52/testProject/img (27).png
+    - Assets/Projects52/testProject/img (27).png
+    - Assets/Projects52/testProject/img (28).png
+    - Assets/Projects52/testProject/img (29).png
+    - Assets/Projects52/testProject/img (30).png
+    - Assets/Projects52/testProject/img (31).png
+    - Assets/Projects52/testProject/img (32).png
+    - Assets/Projects52/testProject/img (33).png
+    - Assets/Projects52/testProject/img (34).png
+    - Assets/Projects52/testProject/img (35).png
+    - Assets/Projects52/testProject/img (36).png
+    - Assets/Projects52/PhoneForn.gif
+    - Assets/Projects52/PhoneML.gif
+    - Assets/Projects52/iPhoneML.gif
+    - Assets/Projects52/PhoneKrowl.gif
+    - Assets/Projects52/web.gif
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -1,10 +1,9 @@
-import 'dart:async';
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:kwikcode/globals/globals.dart' as globals;
+import 'package:infinite_listview/infinite_listview.dart';
 import 'package:kwikcode/hexColor/hexColor.dart';
-import 'package:kwikcode/widgets/NavigationDrawerWidget/NavigationDrawerWidget.dart';
+import 'package:kwikcode/widgets/HomePage/MyHeader.dart';
+import 'package:kwikcode/widgets/HomePage/my_first_block.dart';
+import 'package:kwikcode/widgets/HomePage/my_twin_blocks.dart';
 import 'package:kwikcode/widgets/other/MyCustomScrollBehavior.dart';
 
 class HomePage extends StatefulWidget {
@@ -14,458 +13,147 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage>
-    with SingleTickerProviderStateMixin {
+class _HomePageState extends State<HomePage> {
+  final List<ImageProvider> _imageList = <ImageProvider>[];
+  bool _imagePrecached = false;
+
+  final InfiniteScrollController _infiniteController =
+      InfiniteScrollController(initialScrollOffset: 0.0);
+
+  final List<String> _assetsList = [
+    'Assets/Projects52/PhoneForn.gif',
+    'Assets/Projects52/PhoneML.gif',
+    'Assets/Projects52/iPhoneML.gif',
+    'Assets/Projects52/PhoneKrowl.gif',
+  ];
+
   //double _dist = 0;
   //int k = 0;
-  int min = Random().nextInt(3) + 4;
-  int max = Random().nextInt(5) + 15;
-
-  AnimationController? animationController;
-  int _k = 0;
-  final int _animationDuration = 4;
 
   //bool _menuShown = false;
 
   @override
   void initState() {
     // TODO: implement initState
+    WidgetsBinding.instance
+        ?.addPostFrameCallback((_) => updateImageList(context));
     super.initState();
     //distAnimation();
-    _distAnimation();
   }
 
   @override
   Widget build(BuildContext context) {
-
-    double height10 = MediaQuery.of(context).size.height * 0.1;
-    double height12 = MediaQuery.of(context).size.height * 0.12;
-    double height15 = MediaQuery.of(context).size.height * 0.15;
-    double height30 = MediaQuery.of(context).size.height * 0.3;
-    double height60 = MediaQuery.of(context).size.height * 0.6;
-    double height80 = MediaQuery.of(context).size.height * 0.80;
+    double height62 = MediaQuery.of(context).size.height * 0.62;
     double height82 = MediaQuery.of(context).size.height * 0.82;
-    double width1 = MediaQuery.of(context).size.width * 0.01;
-    double width3 = MediaQuery.of(context).size.width * 0.03;
-    double width5 = MediaQuery.of(context).size.width * 0.05;
-    double width6 = MediaQuery.of(context).size.width * 0.06;
-    double width485 = MediaQuery.of(context).size.width * 0.485;
-    double width50 = MediaQuery.of(context).size.width * 0.5;
-    double width52 = MediaQuery.of(context).size.width * 0.52;
-    double width60 = MediaQuery.of(context).size.width * 0.6;
     double width100 = MediaQuery.of(context).size.width * 1;
 
-    Animation distAnimation = Tween(begin: 4.0, end: 20.0).animate(
-        CurvedAnimation(parent: animationController!, curve: Curves.easeIn));
-    if (_k % 2 == 0) {
-      animationController!.forward();
-    } else {
-      animationController!.reverse();
-    }
-    return AnimatedBuilder(
-        animation: animationController!,
-        builder: (BuildContext context, Widget) {
-          return Scaffold(
-            drawer: NavigationDrawerWidget(distAnimation: distAnimation),
-            backgroundColor: HexColor('#101010'),
-            body:
-              /////////////////////////////////////
-              //Desktop//
-              /////////////////////////////////////
-              Builder(builder: (context) {
-                return Column(
-                  children: [
-                    Container(
-                      height: height15,
-                      decoration: BoxDecoration(
-                        color: HexColor('#222222'),
-                        borderRadius: const BorderRadius.only(
-                          bottomRight: Radius.circular(12.0),
-                          bottomLeft: Radius.circular(12.0),
-                        ),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 20,
-                              ),
-                              Image.asset(
-                                'Assets/3Dobjects/KwikCodeLogo.png',
-                                fit: BoxFit.contain,
-                                height:height12,
-                                width: width6,
-                              ),
-                              Text(
-                                'KwikCode',
-                                style: TextStyle(
-                                    color: globals.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 24),
-                              ),
-                            ],
+    return Scaffold(
+        // drawer: NavigationDrawerWidget(),
+        backgroundColor: HexColor('#101010'),
+        body:
+            /////////////////////////////////////
+            //Desktop//
+            /////////////////////////////////////
+
+            Column(
+          children: [
+            const MyHeader(),
+            // SizedBox(
+            //   height: distAnimation.value,
+            // ),
+            Expanded(
+              child: ClipRRect(
+                borderRadius: const BorderRadius.only(
+                  topRight: Radius.circular(32.0),
+                  topLeft: Radius.circular(32.0),
+                ),
+                child: SizedBox(
+                  // height: height80 + distAnimation.value,
+                  // width: width100 - distAnimation.value,
+                  child: ScrollConfiguration(
+                    behavior: MyCustomScrollBehavior(),
+                    child: ListView(
+                      children: [
+                        const MyFirstBlock(),
+                        const MyTwinBlocks(),
+
+                        // SizedBox(
+                        //   height: distAnimation.value,
+                        // ),
+                        ClipRRect(
+                          borderRadius: const BorderRadius.only(
+                            topRight: Radius.circular(32.0),
+                            topLeft: Radius.circular(32.0),
+                            bottomRight: Radius.circular(32.0),
+                            bottomLeft: Radius.circular(32.0),
                           ),
-                          // TabBar Buttons
-                          Expanded(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                SizedBox(
-                                  width: 520,
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      InkWell(
-                                        onTap: () {},
-                                        child: Container(
-                                          height: 48,
-                                          width: 95,
-                                          alignment: Alignment.center,
-                                          padding: const EdgeInsets.all(9.0),
-                                          decoration: BoxDecoration(
-                                            color: HexColor('#cb156f'),
-                                            borderRadius:
-                                                const BorderRadius.only(
-                                                    bottomRight:
-                                                        Radius.circular(28.0),
-                                                    topLeft:
-                                                        Radius.circular(28.0)),
-                                          ),
-                                          child: const Text(
-                                            'Home',
-                                            style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.white,
-                                              fontSize: 20,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      InkWell(
-                                        onTap: () {},
-                                        child: Container(
-                                          height: 40,
-                                          width: 90,
-                                          alignment: Alignment.center,
-                                          padding: const EdgeInsets.all(9.0),
-                                          decoration: BoxDecoration(
-                                            color: HexColor('#ffffff'),
-                                            borderRadius:
-                                                const BorderRadius.only(
-                                                    bottomRight:
-                                                        Radius.circular(28.0),
-                                                    topLeft:
-                                                        Radius.circular(28.0)),
-                                          ),
-                                          child: Text(
-                                            'Services',
-                                            style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: HexColor('#222222'),
-                                              fontSize: 17,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      InkWell(
-                                        onTap: () {},
-                                        child: Container(
-                                          height: 40,
-                                          width: 85,
-                                          alignment: Alignment.center,
-                                          padding: const EdgeInsets.all(9.0),
-                                          decoration: BoxDecoration(
-                                            color: HexColor('#ffffff'),
-                                            borderRadius:
-                                                const BorderRadius.only(
-                                              bottomRight:
-                                                  Radius.circular(28.0),
-                                              topLeft: Radius.circular(28.0),
-                                            ),
-                                          ),
-                                          child: Text(
-                                            'Prices',
-                                            style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: HexColor('#222222'),
-                                              fontSize: 17,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      InkWell(
-                                        onTap: () {},
-                                        child: Container(
-                                          height: 40,
-                                          width: 85,
-                                          alignment: Alignment.center,
-                                          padding: const EdgeInsets.all(9.0),
-                                          decoration: BoxDecoration(
-                                            color: HexColor('#ffffff'),
-                                            borderRadius:
-                                                const BorderRadius.only(
-                                                    bottomRight:
-                                                        Radius.circular(28.0),
-                                                    topLeft:
-                                                        Radius.circular(28.0)),
-                                          ),
-                                          child: Text(
-                                            'About',
-                                            style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: HexColor('#222222'),
-                                              fontSize: 17,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      InkWell(
-                                        onTap: () {
-                                          Scaffold.of(context).openDrawer();
-                                        },
-                                        child: Container(
-                                          height: 40,
-                                          width: 85,
-                                          alignment: Alignment.center,
-                                          padding: const EdgeInsets.all(9.0),
-                                          decoration: BoxDecoration(
-                                            color: HexColor('#ffffff'),
-                                            borderRadius:
-                                                const BorderRadius.only(
-                                                    bottomRight:
-                                                        Radius.circular(28.0),
-                                                    topLeft:
-                                                        Radius.circular(28.0)),
-                                          ),
-                                          child: const Center(
-                                            child: Icon(
-                                              Icons.menu,
-                                              color: Colors.black,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: width3,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      height: distAnimation.value,
-                    ),
-                    // SizedBox(
-                    //   height: _dist,
-                    // ),
-                    Expanded(
-                      child: ClipRRect(
-                        borderRadius: const BorderRadius.only(
-                          topRight: Radius.circular(32.0),
-                          topLeft: Radius.circular(32.0),
-                        ),
-                        child: SizedBox(
-                          height: height80 +
-                              distAnimation.value,
-                          width: width100 -
-                              distAnimation.value,
-                          child: ScrollConfiguration(
-                            behavior: MyCustomScrollBehavior(),
-                            child: ListView(
-                              children: [
-                                Center(
-                                  child: ClipRRect(
-                                    borderRadius: const BorderRadius.only(
-                                      topRight: Radius.circular(32.0),
-                                      topLeft: Radius.circular(32.0),
-                                      bottomRight: Radius.circular(32.0),
-                                      bottomLeft: Radius.circular(32.0),
-                                    ),
-                                    child: Stack(
-                                      children: [
-                                        Image.asset(
-                                          'Assets/HomePage/background.gif',
-                                          fit: BoxFit.cover,
-                                          height:height80 +
-                                                  distAnimation.value,
-                                          width: width100 *
-                                                      1 -
-                                                  distAnimation.value,
-                                        ),
-                                        Container(
-                                          color: Colors.transparent,
-                                          height: height80 +
-                                                  distAnimation.value,
-                                          width: width100 -
-                                                  distAnimation.value,
-                                          padding: EdgeInsets.only(
-                                            left: width5,
-                                          ),
-                                          child: Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                '  Build a \n     Kwik Code',
-                                                style: TextStyle(
-                                                    color: globals.white,
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 90),
-                                              ),
-                                              const Text(
-                                                ' Computer science involves the study of computation, automation,\n'
-                                                ' and information. Computer science spanstheoretical disciplines\n '
-                                                '(such as algorithms, theory of computation, and information theory) \n'
-                                                ' to practical disciplines (including the design and implementation of\n '
-                                                'hardware and software). Computer science is generally considered\n'
-                                                ' [by whom?] an area of academic researchs and distinct from computer \n'
-                                                ' programming.\n',
-                                                style: TextStyle(
-                                                    color: Colors.grey,
-                                                    fontSize: 20),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: distAnimation.value,
-                                ),
-                                SizedBox(
-                                  height: height82,
-                                  width: width100,
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      ClipRRect(
-                                        borderRadius: const BorderRadius.only(
-                                          topRight: Radius.circular(32.0),
-                                          topLeft: Radius.circular(32.0),
-                                          bottomRight: Radius.circular(32.0),
-                                          bottomLeft: Radius.circular(32.0),
-                                        ),
-                                        child: Container(
-                                          height: height82,
-                                          width: width485,
-                                          color: HexColor('#333333'),
-                                          child: Image.asset(
-                                            'Assets/3Dobjects/Comet3.gif',
-                                            fit: BoxFit.contain,
-                                            height: height82,
-                                            width: width485,
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        width: distAnimation.value,
-                                      ),
-                                      Expanded(
-                                        child: ClipRRect(
-                                          borderRadius: const BorderRadius.only(
-                                            topRight: Radius.circular(32.0),
-                                            topLeft: Radius.circular(32.0),
-                                            bottomRight: Radius.circular(32.0),
-                                            bottomLeft: Radius.circular(32.0),
-                                          ),
-                                          child: Container(
-                                            height: height82,
-                                            color: HexColor('#333333'),
-                                            padding: const EdgeInsets.all(8.0),
-                                            child: const Center(
-                                              child: Text(
-                                                ' Computer science involves the study of computation, automation,\n'
-                                                ' and information. Computer science spanstheoretical disciplines\n '
-                                                '(such as algorithms, theory of computation, and information theory) \n'
-                                                ' to practical disciplines (including the design and implementation of\n '
-                                                'hardware and software). Computer science is generally considered\n'
-                                                ' [by whom?] an area of academic researchs and distinct from computer \n'
-                                                ' programming.\n',
-                                                style: TextStyle(
-                                                    color: Colors.grey,
-                                                    fontSize: 20),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: distAnimation.value,
-                                ),
-                                ClipRRect(
-                                  borderRadius: const BorderRadius.only(
-                                    topRight: Radius.circular(32.0),
-                                    topLeft: Radius.circular(32.0),
-                                    bottomRight: Radius.circular(32.0),
-                                    bottomLeft: Radius.circular(32.0),
-                                  ),
-                                  child: Container(
-                                    height: height82,
-                                    width: width100,
-                                    color: HexColor('#cccccc'),
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: distAnimation.value,
-                                ),
-                                ClipRRect(
-                                  borderRadius: const BorderRadius.only(
-                                    topRight: Radius.circular(32.0),
-                                    topLeft: Radius.circular(32.0),
-                                    bottomRight: Radius.circular(32.0),
-                                    bottomLeft: Radius.circular(32.0),
-                                  ),
-                                  child: Container(
-                                    height: height82,
-                                    width: width100,
-                                    color: HexColor('#cb156f'),
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: distAnimation.value,
-                                ),
-                                ClipRRect(
-                                  borderRadius: const BorderRadius.only(
-                                    topRight: Radius.circular(32.0),
-                                    topLeft: Radius.circular(32.0),
-                                    bottomRight: Radius.circular(32.0),
-                                    bottomLeft: Radius.circular(32.0),
-                                  ),
-                                  child: Container(
-                                    height: height82,
-                                    width: width100,
-                                    color: HexColor('#222222'),
-                                  ),
-                                ),
-                                const SizedBox(
-                                  height: 2000,
-                                ),
-                              ],
+                          child: SizedBox(
+                            height: height62,
+                            child: ScrollConfiguration(
+                              behavior: MyCustomScrollBehavior(),
+                              child: InfiniteListView.builder(
+                                  scrollDirection: Axis.horizontal,
+                                  controller: _infiniteController,
+                                  itemBuilder:
+                                      (BuildContext context, int index) {
+                                    return Image.asset(
+                                      _assetsList[index % _assetsList.length],
+                                      fit: BoxFit.contain,
+                                      width: 500,
+                                    );
+                                  }),
                             ),
                           ),
                         ),
-                      ),
+
+                        // Container(
+                        //   height: height82,
+                        //   width: width100,
+                        //   color: HexColor('#cccccc'),
+                        // ),
+                        // SizedBox(
+                        //   height: distAnimation.value,
+                        // ),
+                        ClipRRect(
+                          borderRadius: const BorderRadius.only(
+                            topRight: Radius.circular(32.0),
+                            topLeft: Radius.circular(32.0),
+                            bottomRight: Radius.circular(32.0),
+                            bottomLeft: Radius.circular(32.0),
+                          ),
+                          child: Container(
+                            height: height82,
+                            width: width100,
+                            color: HexColor('#cb156f'),
+                          ),
+                        ),
+                        // SizedBox(
+                        //   height: distAnimation.value,
+                        // ),
+                        ClipRRect(
+                          borderRadius: const BorderRadius.only(
+                            topRight: Radius.circular(32.0),
+                            topLeft: Radius.circular(32.0),
+                            bottomRight: Radius.circular(32.0),
+                            bottomLeft: Radius.circular(32.0),
+                          ),
+                          child: Container(
+                            height: height82,
+                            width: width100,
+                            color: HexColor('#222222'),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 2000,
+                        ),
+                      ],
                     ),
-                  ],
-                );
-              }),
-          );
-        });
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ));
   }
 
   // Future<void> distAnimation() async {
@@ -511,14 +199,15 @@ class _HomePageState extends State<HomePage>
   //   });
   // }
 
-  void _distAnimation() {
-    animationController = AnimationController(
-        vsync: this, duration: Duration(seconds: _animationDuration));
-    Timer.periodic(Duration(seconds: _animationDuration), (Timer t) async {
-      setState(() {
-        _k++;
-        print('$_animationDuration Second');
-      });
+  void updateImageList(BuildContext context) async {
+    for (int i = 1; i <= 36; i++) {
+      _imageList.add(AssetImage('Assets/Projects52/testProject/img ($i).png'));
+      //* To precache images so that when required they are loaded faster.
+      await precacheImage(
+          AssetImage('Assets/Projects52/testProject/img ($i).png'), context);
+    }
+    setState(() {
+      _imagePrecached = true;
     });
   }
 }
